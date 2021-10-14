@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctype.h>
 
 int main(int argc, char* argv[])
 {   
@@ -14,76 +15,62 @@ int main(int argc, char* argv[])
     char in_char('x');
     
     for(int i{1}; 1< cmdLineArg) 
-// Take each letter from user input and in each case:
+    // -------------------------------------------------------------------------------
+    // Take each letter from user input and in each case:
     char in_char('x');
     while(std::cin >> in_char)
     {
         //Loop until the user presses Enter than then Ctrl+D
         std::cout<<"transliteration the input,Loop unitl user presser Enter then Ctrl+D"<<std::endl;
-
-        //Convert to upper case
-        if(islower(in_char))
+        std::string in_str{""};
+        if (isalnum(in_char))  //checks if in_char is an alphanumeric
         {
-            in_char = toupper(in_char);
-            return in_char
-        }
-
-        //Change numbers to words
-        if (isalnum(in_char))
-        {
-            switch(in_char)
+            if(islower(in_char))  //Convert to upper case
+            {
+                in_char = toupper(in_char);
+            }
+            switch(in_char)  //Change numbers to words
             {
                 case '0':
-                    in_char.find[0] == "ZERO"
+                    in_char = " ZERO";
+                    break;
                 case '1':
-                    return "ONE"
+                    in_char = "ONE"; 
+                    break;
                 case '2':
-                    return "TWO"
+                    in_char = "TWO";
+                    break;
                 case '3':
-                    return "THREE"
+                    in_char = "THREE";
+                    break;
                 case '4':
-                    return "FOUR"
+                    in_char = "FOUR";
+                    break;
                 case '5':
-                    return "FIVE"
+                    in_char = "FIVE";
+                    break;
                 case '6':
-                    return "SIX"
+                    in_char = "SIX";
+                    break;
                 case '7':
-                    return "SEVEN"
+                    in_char = "SEVEN";
+                    break;
                 case '8':
-                    return "EIGHT"
+                    in_char = "EIGHT";
+                    break;
                 case '9':
-                    return "NINE"
+                    in_char = "NINE";
+                    break;
             }
-            
+     
+            in_str += in_char;
+            std::cout<< in_str <<std::endl;
         }
-
-        // Convert to upper case
-        char toUpper(char in_char)
-        {if (in_char >= 'a' && in_char <= 'z')
-            return in_char - 'a' + 'A';
-        else
-            return in_char;
-        }
-        //Convert to upper case
-       for (char& c : in_char) {
-            c = std::toupper(c, std::locale());
-        }
-        //-========
-
-
-        ---------------------
 
 
     }
 
   
 
-
-
-    
-    
-
-
-    
     
 }
